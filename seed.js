@@ -24,7 +24,8 @@ var data = {
     {name: "Gild Hall, a Thompson Hotel", place: {address: "15 Gold Street", city: "New York", state: "NY", phone: "123-456-7890", location: [40.707894, -74.007108]}, num_stars: 4, amenities: "Paid Wi-Fi" },
     {name: "W New York", place: {address: "123 Washington Street", city: "New York", state: "NY", phone: "123-456-7890", location: [40.709102, -74.013997]}, num_stars: 3.5, amenities: "Pool, 24 hour Gym, Paid Wi-Fi" },
     {name: "New York Marriott Downtown", place: {address: "85 W St at Albany St", city: "New York", state: "NY", phone: "123-456-7890", location: [40.731131, -73.989568]}, num_stars: 3.5, amenities: "24 hour Gym, Paid Wi-Fi" },
-    {name: "Cosmopolitan Hotel", place: {address: "95 W Broadway", city: "New York", state: "NY", phone: "123-456-7890", location: [40.715681, -74.008922]}, num_stars: 3.5, amenities: "Free Wif-Fi" }
+    {name: "Cosmopolitan Hotel", place: {address: "95 W Broadway", city: "New York", state: "NY", phone: "123-456-7890", location: [40.715681, -74.008922]}, num_stars: 3.5, amenities: "Free Wif-Fi" },
+    {name: "Club Quarters", place: {address: "140 Washington St", city: "New York", state: "NY", phone: "123-456-7890", location: [40.709630, -74.013940]}, num_stars: 4, amenities: "Free Wif-Fi" }
   ],
   restaurant: [
     {name: "Bouley", place: {address: "75 Wall St", city: "New York", state: "NY", phone: "123-456-7890", location: [40.705137, -74.013940]}, cuisine: "French", price: 4},
@@ -61,7 +62,7 @@ var data = {
     {name: "Strand Bookstore", place: {address: "828 Broadway", city: "New York", state: "NY", phone: "123-456-7890", location: [40.733274, -73.990870]}, age_range: "All" }
   ],
   day: [
-    {number: 1, hotel: {name: "Club Quarters", place: {address: "140 Washington St", city: "New York", state: "NY", phone: "123-456-7890", location: [40.709630, -74.013940]}, num_stars: 4, amenities: "Free Wif-Fi" }}
+    {number: 1}
   ]
 };
 
@@ -79,7 +80,6 @@ db.sync({force: true})
       else {
         return db.model(name)
         .create(item, {
-          include: [Hotel]
         });
       }
     });

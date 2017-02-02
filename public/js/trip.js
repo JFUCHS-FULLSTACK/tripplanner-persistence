@@ -75,7 +75,22 @@ var tripModule = (function () {
   var publicAPI = {
 
     load: function () {
+
+      $.ajax({
+        method: 'GET',
+        url: '/api/days'
+      })
+      .then(function (days) {
+        restaurants.forEach(function(days){
+        console.log(restaurant.name);
+        })
+      })
+      .catch(console.error.bind(console) );
+
+
       $(addDay);
+
+      //ajax request for database. If empty, create a new empty day
     },
 
     switchTo: switchTo,
